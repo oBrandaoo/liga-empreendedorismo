@@ -1,97 +1,167 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #050c14;
-  --surface: #0c1824;
-  --surface2: #111f2e;
-  --accent: #00c6ff;
-  --accent2: #0072ff;
-  --border: rgba(0, 198, 255, 0.15);
-  --border2: rgba(0, 198, 255, 0.08);
+  --bg: #080808;
+  --surface: #0f0f0f;
+  --surface2: #161616;
+  --surface3: #1c1c1c;
+  --gold: #F5A623;
+  --gold2: #c47d0e;
+  --gold-dim: rgba(245, 166, 35, 0.12);
+  --gold-border: rgba(245, 166, 35, 0.2);
+  --gold-border2: rgba(245, 166, 35, 0.08);
+  --text: #f0f0f0;
+  --muted: #666;
+  --muted2: #444;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
   background-color: var(--bg);
-  color: #e8f0fe;
+  color: var(--text);
   font-family: 'DM Sans', sans-serif;
   overflow-x: hidden;
 }
 
 @utility font-syne { font-family: 'Syne', sans-serif; }
-@utility text-accent { color: var(--accent); }
-@utility text-muted { color: #7a9ab5; }
+@utility text-gold { color: var(--gold); }
+@utility text-muted { color: var(--muted); }
 @utility bg-surface { background-color: var(--surface); }
 @utility bg-surface2 { background-color: var(--surface2); }
+@utility bg-surface3 { background-color: var(--surface3); }
 
+/* Gradient text gold */
 .gradient-text {
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  background: linear-gradient(135deg, #F5A623 0%, #ffe08a 50%, #c47d0e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
+/* Hero grid */
 .hero-grid-bg {
   background-image:
-    linear-gradient(rgba(0, 198, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 198, 255, 0.04) 1px, transparent 1px);
-  background-size: 60px 60px;
-  mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 100%);
+    linear-gradient(rgba(245,166,35,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245,166,35,0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, black 10%, transparent 100%);
 }
 
+/* Gold glow blob */
 .hero-glow {
-  background: radial-gradient(ellipse, rgba(0, 114, 255, 0.12) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(245, 166, 35, 0.07) 0%, transparent 65%);
 }
 
-.btn-gradient {
-  background: linear-gradient(135deg, var(--accent2), var(--accent));
+/* Gradient button gold */
+.btn-gold {
+  background: linear-gradient(135deg, #c47d0e, #F5A623);
+  color: #000;
+  font-weight: 700;
   transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
 }
-.btn-gradient:hover {
-  opacity: 0.85;
+.btn-gold:hover {
+  opacity: 0.9;
   transform: translateY(-2px);
-  box-shadow: 0 4px 40px rgba(0, 198, 255, 0.35);
+  box-shadow: 0 6px 40px rgba(245, 166, 35, 0.3);
 }
 
+/* Ghost button */
+.btn-ghost {
+  border: 1px solid rgba(245,166,35,0.25);
+  color: var(--text);
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-ghost:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* Noise texture overlay */
+.noise::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.4;
+  border-radius: inherit;
+}
+
+/* Cards */
+.card-gold {
+  background: var(--surface);
+  border: 1px solid var(--gold-border2);
+  transition: border-color 0.25s, transform 0.25s;
+}
+.card-gold:hover {
+  border-color: var(--gold-border);
+  transform: translateY(-4px);
+}
+
+/* Pill tag */
+.tag-gold {
+  background: var(--gold-dim);
+  border: 1px solid var(--gold-border);
+  color: var(--gold);
+}
+
+/* Section divider line */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(245,166,35,0.15), transparent);
+}
+
+/* Pulse dot */
 @keyframes pulse-dot {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(245,166,35,0.4); }
+  50% { opacity: 0.6; box-shadow: 0 0 0 6px rgba(245,166,35,0); }
 }
 .pulse-dot { animation: pulse-dot 2s infinite; }
 
+/* Reveal on scroll */
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
 }
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+.reveal.visible { opacity: 1; transform: translateY(0); }
 
+/* Hero fade ups */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-.animate-fade-up   { animation: fadeUp 0.6s ease both; }
-.animate-fade-up-1 { animation: fadeUp 0.6s 0.1s ease both; }
-.animate-fade-up-2 { animation: fadeUp 0.6s 0.2s ease both; }
-.animate-fade-up-3 { animation: fadeUp 0.6s 0.3s ease both; }
-.animate-fade-up-4 { animation: fadeUp 0.6s 0.4s ease both; }
+.animate-fade-up   { animation: fadeUp 0.7s ease both; }
+.animate-fade-up-1 { animation: fadeUp 0.7s 0.1s ease both; }
+.animate-fade-up-2 { animation: fadeUp 0.7s 0.2s ease both; }
+.animate-fade-up-3 { animation: fadeUp 0.7s 0.3s ease both; }
+.animate-fade-up-4 { animation: fadeUp 0.7s 0.45s ease both; }
 
+/* Number counter style */
+.stat-num {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, #F5A623, #ffe08a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Form inputs */
 .form-input {
   width: 100%;
   background: var(--surface2);
-  border: 1px solid var(--border2);
-  border-radius: 10px;
+  border: 1px solid rgba(245,166,35,0.1);
+  border-radius: 8px;
   padding: 0.75rem 1rem;
-  color: #e8f0fe;
+  color: var(--text);
   font-family: 'DM Sans', sans-serif;
   font-size: 0.9rem;
   transition: border-color 0.2s;
   outline: none;
   resize: none;
 }
-.form-input:focus { border-color: var(--accent); }
-.form-input::placeholder { color: #7a9ab5; }
+.form-input:focus { border-color: rgba(245,166,35,0.5); }
+.form-input::placeholder { color: var(--muted); }
