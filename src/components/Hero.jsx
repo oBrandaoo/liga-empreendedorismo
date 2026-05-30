@@ -38,16 +38,7 @@ export default function Hero() {
             Saiba mais
           </a>
         </div>
-
-        {/* Stats */}
-        <div className="animate-fade-up-4 flex gap-10 flex-wrap mt-16 pt-8 border-t border-[rgba(245,166,35,0.08)]">
-          {stats.map(({ num, label }) => (
-            <div key={label} className="flex flex-col gap-0.5">
-              <span className="stat-num">{num}<span style={{fontSize:'1.5rem'}}>+</span></span>
-              <span className="text-xs text-[#666] uppercase tracking-[0.08em]">{label}</span>
-            </div>
-          ))}
-        </div>
+        
       </div>
     </section>
   )
