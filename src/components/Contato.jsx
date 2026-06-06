@@ -5,7 +5,7 @@ const FORMSPREE_URL = 'https://formspree.io/f/xykvobny'
 
 const links = [
   { Icon: Mail,      label: 'ligaempreendedorafai@gmail.com',        href: 'mailto:ligaempreendedorafai@gmail.com' },
-  { Icon: AtSign,    label: '@ligaempreendedoradafai', href: 'https://instagram.com/ligaempreendedorafai' },
+  { Icon: AtSign,    label: '@ligaempreendedorafai', href: 'https://instagram.com/ligaempreendedorafai' },
   { Icon: Briefcase, label: 'Liga Empreendedora FAI',  href: 'https://linkedin.com' },
 ]
 
@@ -83,7 +83,7 @@ export default function Contato() {
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           {[
             { label: 'Seu nome',            name: 'nome',  type: 'text',  ph: 'Nome completo',              required: true },
-            { label: 'E-mail institucional', name: 'email', type: 'email', ph: 'seunome@fai.edu.br',          required: true },
+            { label: 'E-mail institucional', name: 'email', type: 'email', ph: 'seunome@gmail.com',          required: true },
             { label: 'Curso',               name: 'curso', type: 'text',  ph: 'Ex: Sistemas de Informação' },
           ].map(({ label, name, type, ph, required }) => (
             <div key={name}>
