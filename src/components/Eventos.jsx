@@ -1,26 +1,4 @@
-import { CalendarDays, MapPin, Star } from 'lucide-react'
-
-const eventos = [
-  {
-    tag: 'Workshop',
-    title: 'Como validar sua ideia de negócio em 48h',
-    desc: 'Metodologia lean startup aplicada na prática, com exercícios e feedback ao vivo.',
-    date: 'Jun 2025', local: 'FAI — Sala 204',
-  },
-  {
-    tag: 'Hackathon',
-    title: 'FAI Startup Weekend',
-    desc: '54 horas para construir um MVP do zero. Premiação para os 3 melhores projetos.',
-    date: 'Ago 2025', local: 'FAI — Auditório',
-    featured: true,
-  },
-  {
-    tag: 'Palestra',
-    title: 'Da FAI para o mercado: cases de ex-alunos',
-    desc: 'Depoimentos de empreendedores que começaram na faculdade e construíram negócios de impacto.',
-    date: 'Set 2025', local: 'FAI — Auditório',
-  },
-]
+import { Bell, CalendarDays } from 'lucide-react'
 
 export default function Eventos() {
   return (
@@ -31,51 +9,37 @@ export default function Eventos() {
         <h2 className="font-syne font-bold text-[clamp(1.9rem,4vw,3rem)] leading-tight tracking-tight mb-4">
           O que está por vir
         </h2>
-        <p className="text-[#666] font-light text-[1.05rem] max-w-lg">
-          Fique por dentro das próximas atividades e reserve seu lugar.
+        <p className="text-[#555] font-light text-[1.05rem] max-w-lg">
+          Workshops, hackathons, palestras e muito mais. Fique de olho nas próximas novidades.
         </p>
       </div>
 
-      <div className="reveal grid md:grid-cols-3 gap-4 mt-10">
-        {eventos.map(({ tag, title, desc, date, local, featured }) => (
-          <div key={title}
-            className="rounded-2xl overflow-hidden transition-all duration-250 cursor-default"
-            style={{
-              background: featured ? 'rgba(245,166,35,0.05)' : '#0f0f0f',
-              border: featured ? '1px solid rgba(245,166,35,0.3)' : '1px solid rgba(245,166,35,0.08)',
-            }}
-            onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-6px)'}
-            onMouseLeave={e => e.currentTarget.style.transform = 'translateY(0)'}
-          >
-            {featured && (
-              <div className="px-5 pt-3 pb-0 flex items-center gap-1.5">
-                <Star size={11} color="#F5A623" fill="#F5A623" />
-                <span className="text-[10px] tracking-[0.12em] uppercase font-bold text-[#F5A623]">
-                  Destaque
-                </span>
-              </div>
-            )}
-            <div className="px-5 pt-4 pb-4 border-b border-[rgba(245,166,35,0.06)]">
-              <span className="tag-gold inline-block text-[0.7rem] tracking-[0.08em] uppercase px-3 py-1 rounded-full mb-3">
-                {tag}
-              </span>
-              <p className="font-syne font-semibold text-[1.05rem] leading-snug text-[#f0f0f0]">{title}</p>
-            </div>
-            <div className="px-5 py-4">
-              <p className="text-sm text-[#555] font-light mb-4 leading-relaxed">{desc}</p>
-              <div className="flex gap-4 text-xs text-[#444]">
-                <span className="flex items-center gap-1.5">
-                  <CalendarDays size={13} color="#F5A623" strokeWidth={1.5} />
-                  {date}
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <MapPin size={13} color="#F5A623" strokeWidth={1.5} />
-                  {local}
-                </span>
-              </div>
-            </div>
-          </div>
-        ))}
+      {/* Em breve */}
+      <div className="reveal mt-10 rounded-3xl flex flex-col items-center justify-center text-center py-20 px-8 gap-6"
+        style={{ background: '#0f0f0f', border: '1px dashed rgba(245,166,35,0.2)' }}>
+
+        <div className="w-14 h-14 rounded-2xl flex items-center justify-center"
+          style={{ background: 'rgba(245,166,35,0.08)', border: '1px solid rgba(245,166,35,0.15)' }}>
+          <CalendarDays size={22} color="#F5A623" strokeWidth={1.5} />
+        </div>
+
+        <div>
+          <p className="font-syne font-bold text-lg text-[#f0f0f0] mb-2">Novos eventos em breve</p>
+          <p className="text-sm text-[#444] font-light max-w-sm leading-relaxed">
+            Estamos preparando a próxima programação. Siga a liga nas redes sociais para ser o primeiro a saber.
+          </p>
+        </div>
+
+        <a
+          href="https://instagram.com/ligaempreendedorafai"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-2 text-sm font-medium text-[#F5A623] no-underline px-5 py-2.5 rounded-full transition-all duration-200 hover:bg-[rgba(245,166,35,0.08)]"
+          style={{ border: '1px solid rgba(245,166,35,0.25)' }}
+        >
+          <Bell size={14} strokeWidth={1.5} />
+          Seguir no Instagram
+        </a>
       </div>
     </section>
   )
