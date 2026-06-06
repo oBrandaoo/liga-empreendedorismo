@@ -1,9 +1,9 @@
 // ✏️ Substitua pelos dados reais da equipe
 const membros = [
-  { initials: 'PS', name: 'Pedro Souza',      role: 'Presidente',       area: 'Sistemas de Informação' },
-  { initials: 'AC', name: 'Ana Clara',        role: 'Dir. de Projetos',  area: 'Administração' },
-  { initials: 'LM', name: 'Lucas Martins',    role: 'Dir. de Marketing', area: 'Publicidade' },
-  { initials: 'BF', name: 'Beatriz Ferreira', role: 'Dir. de Eventos',   area: 'Gestão Comercial' },
+  { initials: 'GT', name: 'Gustavo Pivoto', role: 'Presidente', area: 'Sistemas de Informação' },
+  { initials: 'RB', name: 'Rafael Brandão', role: 'Vice-Presidente', area: 'Sistemas de Informação' },
+  { initials: 'GD', name: 'Giovanna Dias', role: 'Dir. de Marketing', area: 'Psicologia' },
+  { initials: 'XX', name: '...', role: 'Dir. de Projetos', area: '...' },
 ]
 
 export default function Membros() {

@@ -4,8 +4,8 @@ import { Mail, AtSign, Briefcase, Send, CheckCircle, AlertCircle, Loader } from 
 const FORMSPREE_URL = 'https://formspree.io/f/xykvobny'
 
 const links = [
-  { Icon: Mail,      label: 'liga@fai.edu.br',        href: 'mailto:liga@fai.edu.br' },
-  { Icon: AtSign,    label: '@ligaempreendedoradafai', href: 'https://instagram.com/ligaempreendedoradafai' },
+  { Icon: Mail,      label: 'ligaempreendedorafai@gmail.com',        href: 'mailto:ligaempreendedorafai@gmail.com' },
+  { Icon: AtSign,    label: '@ligaempreendedoradafai', href: 'https://instagram.com/ligaempreendedorafai' },
   { Icon: Briefcase, label: 'Liga Empreendedora FAI',  href: 'https://linkedin.com' },
 ]
 

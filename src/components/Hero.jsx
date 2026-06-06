@@ -16,14 +16,10 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-4xl">
         {/* Badge */}
-        <div className="animate-fade-up inline-flex items-center gap-2 bg-[rgba(245,166,35,0.08)] border border-[rgba(245,166,35,0.2)] text-[#F5A623] text-xs tracking-[0.1em] uppercase px-4 py-2 rounded-full mb-8 w-fit">
-          <span className="pulse-dot w-1.5 h-1.5 rounded-full bg-[#F5A623] block flex-shrink-0" />
-          Faculdade de Administração e Informática
-        </div>
 
         <h1 className="animate-fade-up-1 font-syne font-extrabold text-[clamp(2.8rem,7vw,5.8rem)] leading-[1.03] tracking-tight mb-6">
           Onde ideias viram<br />
-          <span className="gradient-text">startups reais</span>
+          <span className="gradient-text">soluções reais</span>
         </h1>
 
         <p className="animate-fade-up-2 text-lg text-[#666] font-light max-w-xl mb-10 leading-relaxed">
